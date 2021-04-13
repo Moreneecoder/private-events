@@ -1,0 +1,7 @@
+<h2>SIGN UP TO CREATE AND MANAGE EVENTS</h2>
+
+<%= form_with model: @user do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name, placeholder: "Sign up with name", class:"placeholder" %>
+  <%= form.submit %>
+<% end %>
