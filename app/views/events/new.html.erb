@@ -1,0 +1,7 @@
+<h2>CREATE NEW EVENT</h2>
+
+<%= form_with model: @event do |form| %>
+  <%= form.label :description %>
+  <%= form.text_field :description, placeholder: "Enter event description", class:"placeholder" %>
+  <%= form.submit %>
+<% end %>

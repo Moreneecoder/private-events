@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   post 'users/sign_in', to: 'users#start_user_session'
   get 'users/logout', to: 'users#end_user_session'
   resources :users, only: [:new, :create, :show]
+  resources :events, only: [:index, :new, :create, :show]
 end
