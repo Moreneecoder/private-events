@@ -1,0 +1,9 @@
+<p><%= flash[:notice] %></p>
+
+<h2>SIGN IN</h2>
+
+<%= form_with model: @user do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name, placeholder: "Sign in with name", class:"placeholder" %>
+  <%= form.submit %>
+<% end %>

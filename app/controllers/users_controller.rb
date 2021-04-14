@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
-    before_action :user_logged_in?, only: [:show]
-    before_action :set_user, only: [:show]
+    before_action :authenticate_user, only: [:show]
+    before_action :current_user, only: [:show]
     def new
+      session[:user_id] = nil
       @user = User.new
     end
 
@@ -17,6 +18,19 @@ class UsersController < ApplicationController
       end
     end
 
+    def sign_in
+
+    end
+
+    def start_user_session
+      if User.exists?(name: params[:name])
+        @user = User.find_by(name: params['name'])
+        session[:user_id] = @user.id
+        flash[:notice] = 'You logged in successfully'
+        redirect_to @user
+      end
+    end
+
     def show
       
     end
@@ -27,7 +41,7 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name)
     end
 
-    def set_user
+    def current_user
       @user = User.find(session[:user_id])
     end
 end
