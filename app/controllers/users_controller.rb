@@ -2,7 +2,6 @@ class UsersController < ApplicationController
     before_action :authenticate_user, only: [:show]
     before_action :current_user, only: [:show]
     def new
-      session[:user_id] = nil
       @user = User.new
     end
 
@@ -29,6 +28,11 @@ class UsersController < ApplicationController
         flash[:notice] = 'You logged in successfully'
         redirect_to @user
       end
+    end
+
+    def end_user_session
+        session[:user_id] = nil
+        redirect_to users_sign_in_path
     end
 
     def show
