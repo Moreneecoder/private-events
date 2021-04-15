@@ -9,4 +9,8 @@ class ApplicationController < ActionController::Base
           redirect_to new_user_path
         end
     end
+
+    def current_user
+        @user = User.find(session[:user_id])
+    end
 end

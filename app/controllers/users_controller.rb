@@ -44,8 +44,4 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name)
     end
-
-    def current_user
-      @user = User.find(session[:user_id])
-    end
 end

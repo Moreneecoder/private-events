@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+    before_action :current_user, only: [:show, :create]
+    
     def index
         
     end
@@ -8,10 +10,23 @@ class EventsController < ApplicationController
     end
 
     def create
-        
+    # p params
+      @event = @user.events.build(event_params)
+      if @event.save
+        flash[:notice] = 'Event created Successfully'
+        redirect_to @event
+      else
+        render :new
+      end
     end
 
     def show
         
+    end
+
+    private
+
+    def event_params
+      params.require(:event).permit(:description, :location, :date)
     end
 end

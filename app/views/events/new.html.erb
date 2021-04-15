@@ -3,5 +3,9 @@
 <%= form_with model: @event do |form| %>
   <%= form.label :description %>
   <%= form.text_field :description, placeholder: "Enter event description", class:"placeholder" %>
+  <%= form.label :location %>
+  <%= form.text_field :location, placeholder: "Enter event location", class:"placeholder" %>
+  <%= form.label :date %>
+  <%= form.date_field :date%>
   <%= form.submit %>
 <% end %>
