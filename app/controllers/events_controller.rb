@@ -2,7 +2,7 @@ class EventsController < ApplicationController
     before_action :current_user, only: [:show, :create]
     
     def index
-        
+      @events = Event.all
     end
 
     def new
@@ -21,7 +21,7 @@ class EventsController < ApplicationController
     end
 
     def show
-        
+     @event = Event.find(params['id'])
     end
 
     private

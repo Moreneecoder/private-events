@@ -1,0 +1,6 @@
+<p><%= flash[:notice] %></p>
+<h1>Hey, <%= @user[:name] %>!</h1>
+
+<p>Creator: <%= @event.creator['name']%></p>
+
+<%= link_to 'Create Event', new_event_path %> | <%= link_to 'logout', users_logout_path%>
