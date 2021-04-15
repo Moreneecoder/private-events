@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
     before_action :authenticate_user, only: [:show]
     before_action :current_user, only: [:show]
+    # before_action :set_user, only: [:show]
     def new
       @user = User.new
     end
@@ -37,6 +38,7 @@ class UsersController < ApplicationController
 
     def show
       @user_events = @user.events
+      @user_attending_events = @user.attending_events
     end
 
     private
@@ -44,4 +46,5 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name)
     end
+
 end

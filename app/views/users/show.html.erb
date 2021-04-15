@@ -1,9 +1,10 @@
 <p><%= flash[:notice] %></p>
+<p><%= flash[:alert] %></p>
 <h1>Hey, <%= @user[:name] %>!</h1>
 
 <table>
     <thead>
-        <strong>YOUR EVENTS</strong>
+        <strong>EVENTS YOU CREATED</strong>
     </thead>
     <tbody>
         <tr>
@@ -21,5 +22,23 @@
         <% end %>
     </tbody>
 </table>
+
+<hr>
+
+<h5>UPCOMING EVENTS</h5>
+
+<ul>
+    <% @user_attending_events.where('date >= ?', Date.current).each do |event| %>
+        <li><%= event.description %> | <%= event.location %> | <%= event.date %></li>
+    <% end %>
+</ul>
+
+<h5>PREVIOUS EVENTS</h5>
+
+<ul>
+    <% @user_attending_events.where('date < ?', Date.current).each do |event| %>
+        <li><%= event.description %> | <%= event.location %> | <%= event.date %></li>
+    <% end %>
+</ul>
 
 <%= link_to 'Create Event', new_event_path %> | <%= link_to 'logout', users_logout_path%>
