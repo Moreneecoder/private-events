@@ -1,6 +1,19 @@
 <p><%= flash[:notice] %></p>
 <h1>Hey, <%= @user[:name] %>!</h1>
 
-<p>Creator: <%= @event.creator['name']%></p>
+<p><strong>Creator</strong>: <%= @event.creator['name']%></p>
+<p><strong>Description</strong>: <%= @event.description%></p>
+<p><strong>Location</strong>: <%= @event.location%></p>
+
+<hr>
+
+<h5>ATTENDEES</h5>
+
+<ul>
+    <% @attendees.each do |attendee| %>
+        <li><%= attendee.name %></li>
+    <% end %>
+</ul>
+
 
 <%= link_to 'Create Event', new_event_path %> | <%= link_to 'logout', users_logout_path%>
