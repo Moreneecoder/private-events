@@ -23,7 +23,6 @@ class EventsController < ApplicationController
     def show
      @event = Event.find(params['id'])
      @attendees = @event.attendees
-     p @attendees
     end
 
     private

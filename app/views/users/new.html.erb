@@ -1,3 +1,5 @@
+<br>
+<%= link_to 'dashboard', user_path(current_user())%> | <%= link_to 'logout', users_logout_path %>
 <p><%= flash[:alert] %></p>
 
 <h2>SIGN UP TO CREATE AND MANAGE EVENTS</h2>
@@ -7,5 +9,3 @@
   <%= form.text_field :name, placeholder: "Sign up with name", class:"placeholder" %>
   <%= form.submit %>
 <% end %>
-
-<%= link_to 'logout', users_logout_path %>
