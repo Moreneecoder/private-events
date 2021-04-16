@@ -37,8 +37,8 @@ class UsersController < ApplicationController
     end
 
     def show
-      @user_events = @user.events
-      @user_attending_events = @user.attending_events
+      @user_events = @current_user.events
+      @user_attending_events = @current_user.attending_events
     end
 
     private

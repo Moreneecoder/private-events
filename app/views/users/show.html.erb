@@ -1,6 +1,8 @@
+<%= render 'layouts/navigation', current_user: @current_user%>
+
 <p><%= flash[:notice] %></p>
 <p><%= flash[:alert] %></p>
-<h1>Hey, <%= @user[:name] %>!</h1>
+<h1>Hey, <%= @current_user[:name] %>!</h1>
 
 <table>
     <thead>
@@ -40,5 +42,3 @@
         <li><%= event.description %> | <%= event.location %> | <%= event.date %></li>
     <% end %>
 </ul>
-
-<%= link_to 'Create Event', new_event_path %> | <%= link_to 'logout', users_logout_path%>

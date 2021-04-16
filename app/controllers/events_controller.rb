@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-    before_action :current_user, only: [:show, :create]
+    before_action :current_user, only: [:index, :new, :show, :create]
     
     def index
       @events = Event.all
@@ -10,7 +10,6 @@ class EventsController < ApplicationController
     end
 
     def create
-    # p params
       @event = @user.events.build(event_params)
       if @event.save
         flash[:notice] = 'Event created Successfully'
