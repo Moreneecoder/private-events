@@ -31,9 +31,5 @@ RSpec.describe User , type: :model do
 
 
   end
-
-    # it { should have_many(:events) }
-    # it { should have_many(:attended_events) }
-    # it { should have_many(:attending_events) }
   
 end
