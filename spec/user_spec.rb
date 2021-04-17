@@ -1,7 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe User , type: :model do
-
+RSpec.describe User, type: :model do
   describe 'validations' do
     describe 'name' do
       it 'must be present' do
@@ -14,22 +13,19 @@ RSpec.describe User , type: :model do
   end
 
   describe 'associations' do
-    it "has many events" do
-        user = User.reflect_on_association(:events)
-        expect(user.macro).to eq(:has_many)
+    it 'has many events' do
+      user = User.reflect_on_association(:events)
+      expect(user.macro).to eq(:has_many)
     end
 
-    it "has many attended_events" do
-        user = User.reflect_on_association(:attended_events)
-        expect(user.macro).to eq(:has_many)
+    it 'has many attended_events' do
+      user = User.reflect_on_association(:attended_events)
+      expect(user.macro).to eq(:has_many)
     end
 
-    it "has many attending_events" do
-        user = User.reflect_on_association(:attending_events)
-        expect(user.macro).to eq(:has_many)
+    it 'has many attending_events' do
+      user = User.reflect_on_association(:attending_events)
+      expect(user.macro).to eq(:has_many)
     end
-
-
   end
-  
 end
