@@ -9,4 +9,16 @@ RSpec.describe 'Sign in', type: :feature do
       sleep(3)
       expect(current_path).to eq("/users/#{user.id}")
     end
-  end
+end
+
+RSpec.describe 'Sign up', type: :feature do
+    scenario 'register' do
+      visit new_user_url
+      fill_in 'user_name', with: 'JaneDoe'
+      click_button 'Create User'
+      sleep(3)
+
+      user = User.find_by(name: 'JaneDoe')
+      expect(current_path).to eq("/users/#{user.id}")
+    end
+end
