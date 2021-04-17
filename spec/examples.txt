@@ -1,15 +1,16 @@
 example_id                           | status | run_time        |
 ------------------------------------ | ------ | --------------- |
-./spec/attended_event_spec.rb[1:1:1] | passed | 0.0011 seconds  |
-./spec/attended_event_spec.rb[1:1:2] | passed | 0.02318 seconds |
-./spec/event_spec.rb[1:1:1:1]        | passed | 0.01478 seconds |
-./spec/event_spec.rb[1:1:2:1]        | passed | 0.01111 seconds |
-./spec/event_spec.rb[1:1:3:1]        | passed | 0.01911 seconds |
-./spec/event_spec.rb[1:1:4:1]        | passed | 0.0059 seconds  |
-./spec/event_spec.rb[1:2:1]          | passed | 0.00102 seconds |
-./spec/event_spec.rb[1:2:2]          | passed | 0.002 seconds   |
-./spec/event_spec.rb[1:2:3]          | passed | 0.00138 seconds |
-./spec/user_spec.rb[1:1:1:1]         | passed | 0.00672 seconds |
-./spec/user_spec.rb[1:2:1]           | passed | 0.00079 seconds |
-./spec/user_spec.rb[1:2:2]           | passed | 0.00075 seconds |
-./spec/user_spec.rb[1:2:3]           | passed | 0.0011 seconds  |
+./spec/attended_event_spec.rb[1:1:1] | passed | 0.00048 seconds |
+./spec/attended_event_spec.rb[1:1:2] | passed | 0.00062 seconds |
+./spec/event_spec.rb[1:1:1:1]        | passed | 0.00547 seconds |
+./spec/event_spec.rb[1:1:2:1]        | passed | 0.0059 seconds  |
+./spec/event_spec.rb[1:1:3:1]        | passed | 0.01166 seconds |
+./spec/event_spec.rb[1:1:4:1]        | passed | 0.01557 seconds |
+./spec/event_spec.rb[1:2:1]          | passed | 0.00056 seconds |
+./spec/event_spec.rb[1:2:2]          | passed | 0.0009 seconds  |
+./spec/event_spec.rb[1:2:3]          | passed | 0.00092 seconds |
+./spec/user_spec.rb[1:1:1:1]         | passed | 0.00109 seconds |
+./spec/user_spec.rb[1:2:1]           | passed | 0.00106 seconds |
+./spec/user_spec.rb[1:2:2]           | passed | 0.00056 seconds |
+./spec/user_spec.rb[1:2:3]           | passed | 0.00189 seconds |
+./spec/users_controller_spec.rb[1:1] | passed | 3.22 seconds    |
