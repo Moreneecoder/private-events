@@ -15,7 +15,7 @@ This project shows the author's understanding of Rails' Active Record Queries an
 
 # Getting Started
 
-- Run this command in your OS terminal: `git clone https://github.com/notrexxx/members-only.git` to get a copy of the project. 
+- Run this command in your OS terminal: `git clone https://github.com/Moreneecoder/private-events.git` to get a copy of the project. 
 
 # Setup/Installation
 To run the application please:
@@ -51,7 +51,7 @@ and press ENTER
 
 # Usage
 
-- Go to http:localhost:3000/ on your browser
+- Go to http://localhost:3000/ on your browser
 
 - Sign Up a new user by using the form
 - Like any well structured website, the rest of the actions are intuitive as you can use the navigation links on top of the pages.
