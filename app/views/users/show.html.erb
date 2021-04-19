@@ -29,16 +29,8 @@
 
 <h5>UPCOMING EVENTS</h5>
 
-<ul>
-    <% @user_attending_events.where('date >= ?', Date.current).each do |event| %>
-        <li><%= event.description %> | <%= event.location %> | <%= event.date %></li>
-    <% end %>
-</ul>
+<%= render 'events_list', events: @user_attending_events%>
 
 <h5>PREVIOUS EVENTS</h5>
 
-<ul>
-    <% @user_attending_events.where('date < ?', Date.current).each do |event| %>
-        <li><%= event.description %> | <%= event.location %> | <%= event.date %></li>
-    <% end %>
-</ul>
+<%= render 'events_list', events: @user_attended_events%>

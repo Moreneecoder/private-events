@@ -39,7 +39,8 @@ class UsersController < ApplicationController
 
   def show
     @user_events = @current_user.events
-    @user_attending_events = @current_user.attending_events
+    @user_attended_events = @current_user.attending_events.past
+    @user_attending_events = @current_user.attending_events.upcoming
   end
 
   private
