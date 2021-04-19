@@ -1,5 +1,5 @@
 <ul>
     <% events.each do |event| %>
-        <li><%= event.description %> | <%= event.location %> | <%= event.date %></li>
+        <li><%= link_to event.description, event %> | <%= event.location %> | <%= event.date %></li>
     <% end %>
 </ul>
