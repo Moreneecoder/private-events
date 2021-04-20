@@ -1,9 +1,14 @@
 <p><%= flash[:notice] %></p>
+<p><%= flash[:alert] %></p>
 
 <h2>SIGN IN</h2>
 
 <%= form_with model: @user do |form| %>
   <%= form.label :name %>
   <%= form.text_field :name, placeholder: "Sign in with name", class:"placeholder" %>
-  <%= form.submit %>
+  <%= form.submit 'Sign In' %>
 <% end %>
+
+<br>
+
+<%= link_to 'Sign up', new_user_path %>

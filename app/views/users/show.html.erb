@@ -1,6 +1,36 @@
+<%= render 'layouts/navigation', current_user: @current_user%>
+
 <p><%= flash[:notice] %></p>
-<h1>Hey, <%= @user[:name] %>!</h1>
+<p><%= flash[:alert] %></p>
+<h1>Hey, <%= @current_user[:name] %>!</h1>
 
-<h4>Your Events</h4>
+<table>
+    <thead>
+        <strong>EVENTS YOU CREATED</strong>
+    </thead>
+    <tbody>
+        <tr>
+            <th>Description</th>
+            <th>Location</th>
+            <th colspan="3">Date</th>
+        </tr>
 
-<a href="#">Create Event</a>
+        <% @user_events.each do |event| %>
+            <tr>
+                <td><%= link_to event.description, event %></td>
+                <td><%= event.location %></td>
+                <td><%= event.date %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<hr>
+
+<h5>UPCOMING EVENTS</h5>
+
+<%= render 'events_list', events: @user_attending_events%>
+
+<h5>PREVIOUS EVENTS</h5>
+
+<%= render 'events_list', events: @user_attended_events%>

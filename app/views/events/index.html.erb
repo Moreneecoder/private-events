@@ -1,0 +1,21 @@
+<%= render 'layouts/navigation', current_user: @current_user%>
+
+<br><br>
+
+<table>
+    <thead>
+        <strong>PREVIOUS EVENTS</strong>
+    </thead>
+    <%= render 'table_body.html.erb', events: @past_events%>
+</table>
+
+<br>
+
+<table>
+    <thead>
+        <strong>UPCOMING EVENTS</strong>
+    </thead>
+    
+    <%= render 'table_body.html.erb', events: @future_events%>
+
+</table>

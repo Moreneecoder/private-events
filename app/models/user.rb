@@ -1,5 +1,7 @@
 class User < ApplicationRecord
-    has_many :events
-    has_many :invitations 
-    has_many :guests, through: :invitation
+  validates :name, presence: true
+
+  has_many :events, foreign_key: :creator_id
+  has_many :attended_events
+  has_many :attending_events, foreign_key: :event_id, class_name: 'Event', through: :attended_events, source: :event
 end
